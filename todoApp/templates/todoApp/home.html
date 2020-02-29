@@ -1,0 +1,69 @@
+{% extends 'todoApp/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form method ="POST" class="form-inline">
+  {% csrf_token %}
+  <div class="form-group mx-sm-4 mb-3">
+   {{ form|crispy }}
+  </div>
+  <button type="submit" class="btn btn-primary mb-3">Add Note</button>
+</form>
+
+<table class="table table-hover">
+
+  {% if tasks %}
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">My Notes</th>
+      <th scope="col">Added</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Update</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for task in tasks %}
+    <tr>
+      <th scope="row">{{ task.id }}</th>
+      <td>{{ task.note }}</td>
+      <td>{{ task.created_on|date:"N j, Y, g:iA" }}</td>
+      <td><a href="{% url 'todo-delete' task.pk %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+      <td><a href="{% url 'todo-update' task.pk %}"><button type="button" class="btn btn-info">Update</button></a></td>
+    
+      
+    </tr>
+    {% endfor %}
+      
+    {% else %}
+     <h2>There is no notes</h2>
+    
+    {% endif %}
+
+  </tbody>
+</table>
+
+<div class= "containet">
+  <div class= "row">
+
+    <div  class="pagination">
+      <div class="section-inner clearfix">
+          <p>
+            {% if tasks.has_previous %}
+              <a href="?page={{tasks.previous_page_number }}"> Previous</a>
+            {% endif %}
+
+            {% if tasks.has_next %}
+              <a href="?page={{tasks.next_page_number }}"> Next</a>
+            {% endif %}
+
+            <span>Page {{tasks.number}} of {{ tasks.paginator.num_pages }}</span>
+          </p>
+      </div>
+
+    </div  class="pagination">
+
+  </div>
+</div>
+
+{% endblock %}
