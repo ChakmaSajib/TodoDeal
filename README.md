@@ -1,8 +1,8 @@
 # TodoDeal
-## TodoDeal Django Application
-In this application, user can **create/update/delete** his/her own todo notes,
-Install **virtualenv** then create **virtualenv env** in your working directory 
-Then open **terminal** and  change directory to **todo** folder where **manage.py** file exits and type **python manage.py runserver** command
+## TodoDeal Django Basic Application
+> In this application, user can **create/update/delete** his/her own todo notes,
+> Install **virtualenv** then create **virtualenv env** in your working directory 
+> Then open **terminal** and  change directory to **todo** folder where **manage.py** file exits and type **python manage.py runserver** command
 
 ## Requirements 
 * **asgiref**==3.2.3
@@ -13,7 +13,7 @@ Then open **terminal** and  change directory to **todo** folder where **manage.p
 
 
 ## Future plans
-1 will add user **authentication** and custom **admin panel** to controll more options
-2 so that, exiting user in database only can create/delete/update own todo note and would be able to share his all todo notes with others
-3 will update **function views** into **Classview** adding more functionality 
-4 will change the UI for better 
+1. I will add user **authentication** and custom **admin panel** to control more options
+2. so that, exiting user in database only can create/delete/update own todo note and would be able to share his all todo notes with others
+3. will update **function views** into **Classview** adding more functionality 
+4. will change the UI for better 
