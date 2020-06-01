@@ -1,5 +1,5 @@
 # TodoDeal
-## TodoDeal -  Django Basic Application demo
+## TodoDeal -  Django Basic Application 
 ### Playing with Python and Django framework
 > In this application, user can **create/update/delete** his/her own todo notes,
 > Install **virtualenv** then create **virtualenv env** in your working directory, 
